@@ -9,20 +9,27 @@
   </head>
   <body>
     <form>
-      <label for="name">name</label>
-      <input id="name" />
+      <label for="name">name
+        <span aria-hidden="true">*</span>
+      </label>
+      <input id="name" required/>
 
-      <label for="email">email</label>
-      <input id="email" />
+      <label for="email" >email
+        <span aria-hidden="true">*</span>
+      </label>
+      <input id="email" type="email" required/>
 
       <label for="website">website</label>
-      <input id="website" />
+      <input id="website" type="url" />
 
       <label for="subject">subject</label>
-      <input id="subject" />
+      <input id="subject" pattern="[a-z0-9 ]*" />
 
-      <label for="message">message</label>
-      <textarea id="message" rows="5"></textarea>
+      <label for="message">message
+        <span aria-hidden="true">*</span>
+        <p id="messageHelp">Your message must be at least 140 characters long</p>
+      </label>
+      <textarea id="message" rows="5" maxlength="140" aria-describedby="messageHelp" required></textarea>
 
       <button>Submit</button>
     </form>
